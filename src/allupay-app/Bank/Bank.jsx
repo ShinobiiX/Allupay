@@ -4,7 +4,7 @@ import detailsStyles from '../Events/EventDetails.module.css';
 import styles from './Bank.module.css';
 import { useHistory } from '../History/HistoryContext';
 import { COUNTRIES_AND_BANKS } from './bank-data.js';
-import Spinner from '../common/Spinner.jsx';
+import Spinner from '../Common/Spinner.jsx';
 import { useBalance } from '../Balance/BalanceContext.jsx';
 
 const CURRENCIES = {

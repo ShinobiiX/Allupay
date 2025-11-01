@@ -75,7 +75,7 @@ Follow these steps to run the Allupay project locally on the Hedera Testnet.
 ## 5. Deployed Hedera IDs (Testnet)
 
 *   **Primary Application Account ID:** `[Your-VITE_MY_ACCOUNT_ID-Here]`
-*   **HTS Token IDs:** None
+*   **HTS Token IDs:** None (Not used in this project)
 *   **HCS Topic IDs:** None
 *   **Smart Contract IDs:** None 
 
