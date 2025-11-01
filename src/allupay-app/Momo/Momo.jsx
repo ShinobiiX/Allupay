@@ -4,7 +4,7 @@ import detailsStyles from '../Events/EventDetails.module.css'; // For popup styl
 import styles from './Momo.module.css';
 import { useHistory } from '../History/HistoryContext';
 import { useBalance } from '../Balance/BalanceContext'; // Assuming BalanceContext is in src/allupay-app/Balance
-import Spinner from '../common/Spinner.jsx';
+import Spinner from '../Common/Spinner.jsx';
 import { COUNTRIES_AND_MOMO_NETWORKS } from './momo-data.js';
 
 // Mock exchange rates (same as Bank page for consistency)
