@@ -32,7 +32,7 @@ import FlightBookingPage from './allupay-app/Flights/FlightBookingPage';
 import FlightTicketPage from './allupay-app/Flights/FlightTicketPage';
 import { HistoryProvider } from './allupay-app/History/HistoryContext.jsx';
 import { BalanceProvider } from './allupay-app/Balance/BalanceContext.jsx';
-import { ThemeProvider } from './allupay-app/hooks/useTheme.jsx';
+import { ThemeProvider } from './allupay-app/Hooks/useTheme.jsx';
 
 
 
