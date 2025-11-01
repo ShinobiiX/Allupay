@@ -1,0 +1,167 @@
+/* Inherit theme variables */
+@import url('../Settings/Settings.module.css');
+
+/* Copied from Dashboard.module.css */
+.paymentMethodSelector {
+  display: flex;
+  gap: 10px;
+  background-color: var(--glass);
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.paymentMethodSelector label {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paymentMethodSelector input[type="radio"] {
+  display: none;
+}
+
+.paymentMethodSelector label.active {
+  background-color: var(--accent);
+  color: var(--bg-black);
+  box-shadow: var(--shadow-elevation-1);
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.imageContainer {
+    height: 500px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow-elevation-3);
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.dateVenue {
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.description {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.purchaseForm {
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: end;
+}
+
+.formGroup.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.formGroup select {
+    background: var(--glass);
+    color: var(--text);
+    border: 1px solid var(--card-border);
+    padding: 10px 12px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.priceInfo {
+    text-align: right;
+}
+
+.priceInfo p {
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.priceInfo h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.purchaseButton {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: var(--text);
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-elevation-2);
+}
+
+/* Re-using popup styles from Dashboard.module.css for consistency */
+.popupOverlay { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); z-index: 100; }
+.pinPopup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 102; background: var(--bg-black); border: 1px solid var(--card-border); border-radius: 14px; box-shadow: var(--shadow-elevation-4); width: 90%; max-width: 320px; padding: 20px; text-align: center; animation: fadeInAndScaleUp 0.25s cubic-bezier(0.1, 0.9, 0.2, 1); }
+.popupTitle { font-weight: 700; font-size: 1.1rem; }
+.pinSubtitle { color: var(--muted); font-size: 0.9rem; margin: 4px 0 16px; }
+.pinInput { background: var(--glass); color: var(--text); border: 1px solid var(--card-border); padding: 12px; border-radius: 8px; outline: none; font-size: 1.5rem; letter-spacing: 0.5em; text-align: center; width: 100%; max-width: 180px; margin: 0 auto 12px; }
+.pinError { color: #ff4d4f; font-size: 0.85rem; margin-top: -8px; margin-bottom: 12px; }
+.blurred { filter: blur(4px); }
+.popupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.popupClose {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    transition: color 0.2s ease;
+}
+.popupClose:hover { color: var(--white); }
+
+@media (max-width: 768px) {
+    .detailsGrid {
+        grid-template-columns: 1fr;
+    }
+    .imageContainer {
+        height: 300px;
+    }
+}

@@ -1,0 +1,195 @@
+@import url('../Settings/Settings.module.css');
+
+.page {
+    min-height: 100vh;
+    background: var(--page-background);
+    color: var(--text);
+    padding: 28px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.bookingGrid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formSection {
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow-elevation-2);
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.formGridFields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.formGroup label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.formGroup input,
+.formGroup select {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    color: var(--text);
+    outline: none;
+    transition: all 0.2s ease;
+}
+.formGroup select option {
+    background-color: var(--bg);
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(44, 165, 141, 0.2);
+}
+
+/* Summary Card */
+.summaryCard {
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow-elevation-3);
+    position: sticky;
+    top: 28px;
+}
+
+.flightSummary {
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.priceSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.priceRow.total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--card-border);
+}
+
+.priceRow span:first-child {
+    color: var(--muted);
+}
+
+.priceRow span:last-child {
+    font-weight: 600;
+}
+
+.confirmButton {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);    
+    color: var(--bg-black);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 24px;
+}
+
+.confirmButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevation-2);
+}
+
+.confirmButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Copied from Dashboard.module.css */
+.paymentMethodSelector {
+  display: flex;
+  gap: 10px;
+  background-color: var(--glass);
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.paymentMethodSelector label {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paymentMethodSelector input[type="radio"] {
+  display: none;
+}
+
+.paymentMethodSelector label.active {
+  background-color: var(--accent);
+  color: var(--bg-black);
+  box-shadow: var(--shadow-elevation-1);
+}
+
+@media (max-width: 900px) {
+    .bookingGrid {
+        grid-template-columns: 1fr;
+    }
+    .summaryCard {
+        position: static;
+        order: -1; /* Move summary to the top on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .formGridFields {
+        grid-template-columns: 1fr;
+    }
+}

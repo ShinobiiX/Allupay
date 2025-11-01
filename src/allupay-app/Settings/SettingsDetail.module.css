@@ -1,0 +1,153 @@
+:root{
+  --bg:#f7f7f8;
+  --card:#fff;
+  --accent:#111827;
+  --muted:#6b6b75;
+  --muted-2:#9aa0a6;
+  --danger:#ff4d4f;
+  --glass: rgba(255,255,255,0.6);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
+}
+
+.page{
+  background: var(--bg);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top,12px) 12px 36px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center; /* restored to original top-aligned behavior */
+}
+.header{
+  width:100%;
+  max-width:790px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 0;
+}
+.header h2{ margin:0; font-size:18px; 
+    font-weight:600; color:var(--accent); }
+.back{
+  background:none;border:none;
+  padding:8px;font-size:18px;border-radius:8px;
+}
+.card{
+  width:100%;
+  max-width:790px;
+  background:var(--card);
+  margin-top:8px;
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 10px 24px rgba(12,12,16,0.06);
+}
+
+/* ACCOUNT specific improvements */
+.accountCard{ padding: 18px; overflow: visible; }
+.accountHeader{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:14px;
+}
+.avatarWrap{ display:flex; gap:12px; align-items:center; width:100%; }
+.avatarCircle{
+  width:88px;
+  height:88px;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#f3f4f6,#ffffff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  box-shadow: 0 6px 18px rgba(15,15,20,0.06);
+  flex-shrink:0;
+}
+.avatarCircle img{ width:100%; height:100%; object-fit:cover; display:block; }
+.avatarPlaceholder{ color:var(--muted); font-weight:700; font-size:28px; }
+
+.avatarLoading{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,0.35);
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* actions next to avatar */
+.avatarActions{ display:flex; flex-direction:column; gap:8px; justify-content:center; align-items:flex-start; }
+.cameraBtn{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 10px;
+  background: linear-gradient(180deg,#111827,#111827);
+  color:#fff;
+  border-radius:10px;
+  border:none;
+  font-size:13px;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(17,24,39,0.08);
+}
+.cameraBtn svg{ opacity:0.9; }
+.removeBtn{
+  background:transparent;
+  color:var(--muted-2);
+  border:none;
+  padding:6px 8px;
+  border-radius:8px;
+  font-size:13px;
+  cursor:pointer;
+}
+
+/* meta text on the right */
+.accountMeta{ flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; }
+.metaName{ font-weight:700; color:var(--accent); font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.metaSub{ color:var(--muted); font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.metaPlaceholder{ color:var(--muted-2); font-weight:500; }
+
+/* form layout improvements */
+.form{ margin-top:4px; }
+.inputGrid{ display:grid; gap:10px; grid-template-columns: 1fr; }
+.field{ display:block; margin-top:6px; }
+.fieldLabel{ display:block; margin-bottom:8px; color:var(--muted); font-size:13px; font-weight:600; }
+.field input, .field textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid #f0f0f2;
+  font-size:15px;
+  background: linear-gradient(180deg,#ffffff,#fbfbfc);
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+.field textarea{ min-height:80px; resize:vertical; }
+
+.field input:focus, .field textarea:focus{ outline:none; box-shadow: 0 6px 18px rgba(17,24,39,0.06); transform: translateY(-1px); }
+
+.smallHelp{ font-size:12px; color:var(--muted-2); margin-top:6px; }
+
+/* actions */
+.actions{ display:flex; justify-content:space-between; gap:10px; margin-top:16px; }
+.primary{ background:#111827; color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:600; cursor:pointer; box-shadow: 0 10px 24px rgba(17,24,39,0.06); }
+.ghost{ background:transparent; border:1px solid #ececec; padding:12px 16px; border-radius:12px; color:var(--muted); cursor:pointer; }
+
+.toast{ margin-top:14px; background:#edf7ed; color:#216e2b; padding:10px 14px; border-radius:10px; display:inline-block; font-weight:600; }
+
+/* responsive tweaks */
+@media (max-width:420px){
+  .card{ padding:12px; border-radius:16px; }
+  .avatarCircle{ width:80px; height:80px; border-radius:14px; }
+  .cameraBtn{ padding:8px 10px; font-size:13px; border-radius:10px; }
+  .inputGrid{ gap:8px; }
+  .actions{ flex-direction:row-reverse; }
+}
+
+/* small polish for larger screens */
+@media (min-width:720px){
+  .inputGrid{ grid-template-columns: 1fr 1fr; gap:12px; }
+  .field:nth-child(4){ grid-column: 1 / -1; } /* bio spans both columns */
+}

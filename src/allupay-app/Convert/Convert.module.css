@@ -1,0 +1,229 @@
+/* Convert.module.css - pixel-perfect for screenshot */
+.convert_main {
+  background: #f5fbfa;
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #222;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px 10px 32px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+.logoSection {
+  display: flex;
+  align-items: center;
+  width: 60px;
+}
+.logo {
+  width: 100%;
+  margin-right: 12px;
+}
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2ca58d;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.walletSelect {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 16px;
+}
+.headerIcons span {
+  margin-left: 16px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.navbar {
+  background: #f5fbfa;
+  padding: 0 32px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.navbar ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar li {
+  font-size: 1.1rem;
+  padding: 18px 0 12px 0;
+  cursor: pointer;
+  color: #222;
+  border-bottom: 2px solid transparent;
+}
+.navbar .active {
+  color: #2ca58d;
+  border-bottom: 2px solid #2ca58d;
+  font-weight: 600;
+}
+.convertForm {
+  max-width: 900px;
+  margin: 60px auto 0 auto;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.convertRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 64px;
+}
+.convertColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  margin: 48px 0 0 0;
+}
+.convertFrom, .convertTo {
+  min-width: 260px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.convertFrom .tokenBox,
+.convertTo .tokenBox{
+  background: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.convertLabel {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 500;
+}
+.tokenSelect {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 18px;
+  box-shadow: 0 1px 4px rgba(44,165,141,0.07);
+  cursor: pointer;
+}
+.tokenImg {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.plusIcon {
+  color: #14796a;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-left: 4px;
+}
+.convertCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+}
+.convertAmountBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  margin-top: 8px;
+}
+.convertAmount {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+.convertRange {
+  font-size: 0.95rem;
+  color: #888;
+}
+.convertMax {
+  color: #14796a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.convertArrow {
+  font-size: 2.2rem;
+  color: #222;
+  margin: 0 0 0 0;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.convertBtn {
+  background: #14796a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(44,165,141,0.05);
+  transition: background 0.2s;
+}
+.convertBtn:hover {
+  background: #218c76;
+}
+@media (max-width: 900px) {
+  .convertForm {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  .convertRow {
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .header, .navbar {
+    padding: 12px;
+  }
+  .headerRight {
+    gap: 8px;
+  }
+  .navbar ul {
+    gap: 12px;
+  }
+  .convertRow {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .convertColumn {
+    gap: 28px;
+    margin: 24px 0 0 0;
+  }
+  .convertFrom, .convertTo {
+    min-width: 0;
+    width: 100%;
+  }
+  .convertBtn {
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+}

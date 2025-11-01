@@ -1,0 +1,33 @@
+@import url('../Settings/Settings.module.css');
+
+.flightRoute {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.flightTimes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.flightTimes span {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.flightTimes p {
+    margin: 4px 0 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.flightLine {
+    flex-grow: 1;
+    padding: 0 16px;
+}
+.flightLine div { height: 1px; background: var(--card-border); margin: 4px 0; }

@@ -1,0 +1,135 @@
+@import url('../Settings/Settings.module.css');
+
+.mainContent {
+    max-width: 1200px;
+    margin: 24px auto;
+}
+
+.searchBarContainer {
+    margin-bottom: 32px;
+}
+
+.searchBar {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text);
+    outline: none;
+    box-shadow: var(--shadow-elevation-1);
+}
+
+.searchBar:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-translucent);
+}
+
+.categoryFilters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    overflow-x: auto;
+    padding-bottom: 10px; /* For scrollbar */
+}
+
+.categoryButton {
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    color: var(--muted);
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    white-space: nowrap;
+}
+
+.categoryButton.activeCategory {
+    background: var(--accent);
+    color: var(--bg-black);
+    border-color: var(--accent-strong);
+}
+
+.restaurantGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.restaurantCard {
+    background: var(--panel);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-elevation-1);
+    transition: all 0.2s ease-out;
+}
+
+.restaurantCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevation-3);
+    border-color: var(--accent);
+}
+
+.cardImage {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.deliveryTime {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.cardContent {
+    padding: 16px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.restaurantName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.rating {
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: var(--glass);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .restaurantGrid {
+        grid-template-columns: 1fr;
+    }
+}

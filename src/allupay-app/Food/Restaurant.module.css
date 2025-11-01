@@ -1,0 +1,120 @@
+@import url('../Settings/Settings.module.css');
+
+.mainContent {
+    max-width: 1000px;
+    margin: 24px auto;
+}
+
+.restaurantHeader {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-elevation-1);
+}
+
+.restaurantImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.restaurantInfo {
+    flex-grow: 1;
+}
+
+.restaurantName {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.restaurantMeta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 4px;
+}
+
+.menuSection {
+    margin-top: 40px;
+}
+
+.menuGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.menuItem {
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    box-shadow: var(--shadow-elevation-1);
+}
+
+.itemDetails {
+    flex-grow: 1;
+}
+
+.itemName {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.itemDescription {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 8px;
+}
+
+.itemPrice {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.itemActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.itemImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.addToCartButton {
+    background: var(--accent);
+    color: var(--bg-black);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .restaurantHeader {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menuGrid {
+        grid-template-columns: 1fr;
+    }
+}
